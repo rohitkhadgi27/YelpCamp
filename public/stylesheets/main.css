@@ -1,0 +1,133 @@
+body{
+	background: #EEF1FC;
+}
+
+.container{
+	margin:10px auto;
+}
+
+.alertClass{
+	margin: 20px auto;
+	height: 50px;
+}
+
+.alert-success{
+	margin: 20px auto;
+}
+
+.landingBtn{
+	margin-top: 50px;
+	text-align: center;
+}
+
+.titleLandingHeading{
+	text-align: center;
+}
+
+.titleLandingHeading h1{
+	margin-top:12%;
+}
+
+.jumbotron{
+	background: white;	
+}
+
+.caption{
+	padding: 20px 0;
+	text-align: center;
+}
+
+.indexCaptionName{
+	text-align: center;
+}
+
+.indexCaptionBtn{
+	text-align: center;
+	margin-top:10px;
+}
+
+.showCaption{
+	padding: 9px;
+}
+
+.showImgTitle{
+	color: #004d99;
+	text-transform: capitalize;
+}
+
+.description{
+	text-align: justify;
+}
+
+.showImgThumbnail{
+	padding: 0px;
+}
+
+.titleHeading{
+	padding: 20px 0;
+}
+
+.newCommentHeading{
+	text-align: center;
+	padding: 20px 0;
+}
+
+.backGalleryBtn{
+	margin-top: 30px;
+	text-align: right;
+}
+
+.card{
+	background: #f0f5f5;
+	margin-top: 20px;
+}
+
+.text-muted {
+	margin-bottom: 5px;
+}
+
+hr{
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+.showAuthorAndDayRow{
+	margin-bottom: -12px;
+}
+
+.newAndEditFormStyling{
+	margin: 15px auto;
+}
+
+.newCommentFormStyling{
+	margin: 15px auto;
+}
+
+.showAddCommentBtn{
+	text-align: right;
+}
+
+.btn{
+	text-transform: capitalize;
+}
+
+#delete{
+	display: inline;
+	margin-left: 10px;
+}
+
+.card-details{
+	margin-top: 30px;
+}
+	
+.commentText{
+	margin-bottom: 12px;
+}	
+
+.card{
+	margin-top: 15px;
+}

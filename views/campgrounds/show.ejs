@@ -1,0 +1,79 @@
+<%- include('../partials/header.ejs') %>
+
+<div class = "container">
+	<div class = "row">
+		<div class = "col-md-3">
+			<p class = "lead">YelpCamp</p>
+			<div class = "list-group">
+				<li class = "list-group-item active">Info 1</li>
+				<li class = "list-group-item">Info 2</li>
+				<li class = "list-group-item">Info 3</li>
+			</div>
+		</div>
+		<div class = "col-lg-9 col-md-8 col-sm-6">
+			<div class = "img-thumbnail showImgThumbnail">
+				<img class = "img-fluid rounded" src = "<%= campground.image %>"/>
+				<div class = "showCaption">
+					<div class = "row">
+						<div class = "col">
+							<h4 class = "showImgTitle"><%= campground.name %></h4>
+						</div>
+						<div class = "col-auto">
+							<h5>$<%= campground.price %>/night</h5>
+						</div>					
+					</div>
+					<p class = "description text-muted"><%= campground.description %></p>
+					<p><em>Submitted By : <%= campground.author.username %></em></p>
+					<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+					   	<a class = "btn btn-warning btn-sm btn-custom" 
+					   	href = "/campgrounds/<%= campground.id %>/edit">Edit Post</a>
+						<form id = "delete" action = "/campgrounds/<%= campground.id %>?_method=DELETE" 
+						method = "POST">
+							<input type = "submit" class = "btn btn-danger btn-sm btn-custom" 
+								   value = "Delete" />
+						</form>
+					<% } %>
+					<div class = "card border-light">
+						<div class = "card-body">
+							<div class = "showAddCommentBtn">
+								<p><a class = "btn btn-success btn-custom" 
+									 href = "/campgrounds/<%= campground._id %>/comments/new">Add Comment</a>
+								</p>
+							</div>
+							<hr>
+							<% campground.comments.forEach(function(comment){ %>
+							<div class = "card-details">	
+								<div class = "row showAuthorAndDayRow">
+									<div class = "col-auto mr-auto">
+										<strong><%= comment.author.username %></strong>
+									</div>
+									<div class = "col-auto">
+										<p>7 days ago</p>
+									</div>
+								</div>
+								<p class = "commentText"><%= comment.text %></p>
+								<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+								<div>
+									<a class = "btn btn-warning btn-sm btn-custom" 
+										href = "/campgrounds/<%= campground.id %>/comments/<%= comment.id %>/edit">
+									Edit Comment</a>
+									<form id = "delete"
+							action = "/campgrounds/<%= campground.id %>/comments/<%= comment.id %>?_method=DELETE" 										method = "POST" >
+										<input type = "submit" class = "btn btn-danger btn-sm btn-custom" 
+											value = "Delete" />
+									</form>
+								</div>
+								<% } %>
+							</div>
+							<% }) %> 
+							<p class = "backGalleryBtn"><a href = "/campgrounds" class = "btn btn-primary btn-sm">
+								Back To Gallery</a></p>
+						</div>
+					</div>													
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

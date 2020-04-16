@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+
+<div class = "container">	
+	<div class = "newCommentFormStyling col-lg-4 col-md-6 col-sm-10">
+		<div class = "titleHeading">
+			<h2>Add New Comment to <%= campground.name %></h2>
+		</div>	
+		<form action = "/campgrounds/<%= campground._id %>/comments" class = "was-validated" method = "POST">
+			<div class = "form-group">
+				<input type = "text" class = "form-control" name = "comment[text]" 
+				placeholder = "Enter Text" required />
+				<div class = "valid-feedback">Valid</div>
+				<div class = "invalid-feedback">Please fill out this field</div>
+			</div>
+			<div class = "form-group">
+				<input type = "submit" class = "form-control btn btn-primary btn-large" value = "Submit" />
+			</div>		
+		</form>
+	</div>
+</div>
+
+<%- include('../partials/footer.ejs') %> 
